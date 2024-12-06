@@ -72,4 +72,17 @@ public class EmotionalJournal : MonoBehaviour
             journalTextBox.text = newText;
         }
     }
+    public void ClearJournal()
+    {
+        journalContent = "";
+        if (journalInputField != null)
+        {
+            journalInputField.text = "";
+        }
+        if (journalTextBox != null)
+        {
+            journalTextBox.text = "";
+        }
+        Debug.Log("Journal cleared.");
+    }
 }

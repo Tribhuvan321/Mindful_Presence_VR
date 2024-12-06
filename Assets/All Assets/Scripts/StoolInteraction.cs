@@ -34,7 +34,7 @@ public class StoolInteraction : MonoBehaviour
                 {
                     Debug.Log("Condition satisfied: Target object with 'Stool' tag detected.");
                     xrOrigin.position = new Vector3(33.6900024f, 0.537543178f, 12.0823269f);
-                    Move.SetActive(false);
+                    //Move.SetActive(false);
                     bookOutlineScript.enabled = true;
                     sphereOutlineScript.enabled = true;
                 }

@@ -9068,7 +9068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243020122508800755, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2243020122508800755, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9096,7 +9096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2243020122894124685, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2243020122894124685, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9152,7 +9152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434851320941268098, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7434851320941268098, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9188,7 +9188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434851321834335947, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7434851321834335947, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9244,7 +9244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434851322872225859, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7434851322872225859, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11386,8 +11386,8 @@ Transform:
   m_GameObject: {fileID: 810336836}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.7, y: 0.04, z: 13.4}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 34.759, y: -0.19085, z: 13.646}
+  m_LocalScale: {x: 0.24242, y: 0.24242, z: 0.24242}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 162641296}
@@ -20096,16 +20096,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 62aac84f2942a8241a745bd434407103, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2121
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62aac84f2942a8241a745bd434407103, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2121
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62aac84f2942a8241a745bd434407103, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2121
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 62aac84f2942a8241a745bd434407103, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.458
+      value: 34.465
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62aac84f2942a8241a745bd434407103, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.132
+      value: 1.1328
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62aac84f2942a8241a745bd434407103, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.657
+      value: 11.534
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62aac84f2942a8241a745bd434407103, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20518,12 +20530,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: "1. Interactable objects are highlighted with\n     vibrant colors.\n\n2.
     Use \"RIGHT JOYSTICK\" to teleport\n     around the terrain.\n\n3. Press \"TRIGGER\"
-    while pointing towards \n     the stool to enable interactions.\n\n4. You won't
-    be able to move while sitting on \n     the chair.\n\n5. Use \"STOP\" button
-    in the hand canvas to \n    stop any process in between.\n\n6. Press \"GRAB\"
-    while pointing towards the \n     sphere to begin \"BREATHING \n     EXERCISE\".\n\n7.
+    while pointing towards \n     the stool to enable interactions.\n\n4. Use \"STOP\"
+    button in the hand canvas to \n    stop any process in between.\n\n5. Press \"GRAB\"
+    while pointing towards the \n     sphere to begin \"BREATHING \n     EXERCISE\".\n\n6.
     Press \"GRAB\" while pointing towards the \n     Book to begin \"JOURNALING YOUR\n    
-    EMOTIONS\".\n\n8. Relax and have a Good Day :)"
+    EMOTIONS\".\n\n7. Relax and have a Good Day :)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30059,7 +30070,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3484128597883003591, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_enableWordWrapping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598236337313, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -30135,11 +30146,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847063, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.10000005
+      value: 0.12121007
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847063, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.099999994
+      value: 0.121209994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3484128598961847063, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2121
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847063, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30151,7 +30166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847063, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.094
+      value: 12.063
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847063, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30171,11 +30186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847063, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 34.487
+      value: 34.232
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847063, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.394
+      value: 1.4504
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847063, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30195,7 +30210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3484128599267958350, guid: 02be27ab17ab3b14f954f65dc06dd738, type: 3}
       propertyPath: m_LineType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
