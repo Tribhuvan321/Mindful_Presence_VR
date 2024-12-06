@@ -1,41 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
-public class JournalController : MonoBehaviour
+using System.Collections;
+using System.Collections.Generic;
+public class EmotionalJournal : MonoBehaviour
 {
-    public GameObject journalPanel;          // The UI panel for the journal
-    public TMP_InputField journalInputField;     // The input field for typing
-    public TMP_Text journalTextBox;             // The Text box to reflect InputField content in real-time
-    private string journalContent = "";      // Variable to store the content
+    public TMP_InputField journalInputField;
+    public TMP_Text journalTextBox;
+    private string journalContent = "";
 
     void Start()
     {
-        CloseJournal();                     // Start with the journal closed
-        LoadJournal();                      // Load saved content if available
-
-        // Listen for changes in the InputField
-        journalInputField.onValueChanged.AddListener(UpdateTextBox);
+        LoadJournal();
+        if (journalInputField != null)
+        {
+            journalInputField.onValueChanged.AddListener(UpdateTextBox);
+        }
     }
 
-    public void OpenJournal()
+    public void SaveJournal()
     {
-        journalPanel.SetActive(true);       // Display the journal panel
-    }
-
-    public void CloseJournal()
-    {
-        journalPanel.SetActive(false);      // Hide the journal panel
-        SaveJournal();                      // Save the content when closing
-    }
-
-    private void SaveJournal()
-    {
-        journalContent = journalInputField.text; // Save current InputField text
-        PlayerPrefs.SetString("JournalContent", journalContent); // Save using PlayerPrefs
-        PlayerPrefs.Save();
-        Debug.Log("Journal saved: " + journalContent);
+        if (journalInputField != null)
+        {
+            journalContent = journalInputField.text;
+            PlayerPrefs.SetString("JournalContent", journalContent);
+            PlayerPrefs.Save();
+            Debug.Log("Journal saved: " + journalContent);
+        }
     }
 
     public void LoadJournal()
@@ -43,13 +33,43 @@ public class JournalController : MonoBehaviour
         if (PlayerPrefs.HasKey("JournalContent"))
         {
             journalContent = PlayerPrefs.GetString("JournalContent");
-            journalInputField.text = journalContent;
-            journalTextBox.text = journalContent; // Update the TextBox with saved content
+            if (journalInputField != null)
+            {
+                journalInputField.text = journalContent;
+                StartCoroutine(SetCaretToEnd()); // Delay setting caret position
+            }
+            if (journalTextBox != null)
+            {
+                journalTextBox.text = journalContent;
+            }
+        }
+        else
+        {
+            Debug.Log("No saved journal content found.");
         }
     }
 
+    private IEnumerator SetCaretToEnd()
+    {
+        // Wait until the InputField is initialized and active in the scene
+        while (!journalInputField.isActiveAndEnabled || journalInputField.textComponent == null)
+        {
+            yield return null; // Wait for the next frame
+        }
+
+        // Ensure the caret position is safely updated after initialization
+        yield return null; // Additional frame wait for safety
+        journalInputField.caretPosition = journalInputField.text.Length;
+    }
+
+
+
+
     private void UpdateTextBox(string newText)
     {
-        journalTextBox.text = newText; // Update the TextBox as the InputField changes
+        if (journalTextBox != null)
+        {
+            journalTextBox.text = newText;
+        }
     }
 }

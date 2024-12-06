@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 
 public class MeditationTextController : MonoBehaviour
@@ -11,10 +10,29 @@ public class MeditationTextController : MonoBehaviour
     public float displayDuration = 4f;
 
     private int currentMessageIndex = 0;
+    private Coroutine messageCoroutine;
 
     void Start()
     {
-        StartCoroutine(DisplayMessages());
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        if (messageCoroutine != null)
+        {
+            StopCoroutine(messageCoroutine);
+        }
+
+        currentMessageIndex = 0;
+
+        meditationText.color = new Color(meditationText.color.r, meditationText.color.g, meditationText.color.b, 0f);
+        meditationText.text = messages[currentMessageIndex];
+
+
+        messageCoroutine = StartCoroutine(DisplayMessages());
+
+        Debug.Log("MeditationTextController initialized.");
     }
 
     IEnumerator DisplayMessages()

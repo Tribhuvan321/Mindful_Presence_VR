@@ -7,10 +7,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class BookInteractionController : MonoBehaviour
 {
     public string targetObjectName = "BookModel";
-    public Animator animator;
     public string triggerName = "BookLiftUp";
     public float raycastDistance = 10f;
+
+    public Animator animator;
     public InputActionProperty select;
+
+    public Outline outlineScript;
+    public Outline orbOutline;
+
     public GameObject canvas;
     public GameObject keyboard;
 
@@ -37,8 +42,10 @@ public class BookInteractionController : MonoBehaviour
                     Debug.Log("object detected");
                     if (animator != null)
                     {
+                        outlineScript.enabled = false;
+                        orbOutline.enabled = false;
                         animator.SetTrigger(triggerName);
-                        //canvas.SetActive(true);
+                        canvas.SetActive(true);
                         keyboard.SetActive(true);
                     }
                     else

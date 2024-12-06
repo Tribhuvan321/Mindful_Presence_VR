@@ -48,10 +48,12 @@ namespace UnityStandardAssets.ImageEffects
         protected void Start()
         {
             // Disable if we don't support image effects
-            if (!SystemInfo.supportsImageEffects) {
+            /*if (!SystemInfo.supportsImageEffects) {
                 enabled = false;
                 return;
-            }
+            }*/
+            // Removed the check for SystemInfo.supportsImageEffects as it is always true in modern Unity versions.
+
             // Disable if the shader can't run on the users graphics card
             if (!blurShader || !material.shader.isSupported) {
                 enabled = false;

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BreathingCompanionController : MonoBehaviour
@@ -8,25 +7,34 @@ public class BreathingCompanionController : MonoBehaviour
     public AudioClip exhaleClip;
     private AudioSource audioSource;
     private Animator animator;
+    private Coroutine breathingCoroutine;
 
-    void Start()
+    private void OnEnable()
     {
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
-        StartCoroutine(BreathingCycle());
+        breathingCoroutine = StartCoroutine(BreathingCycle());
+    }
+
+    private void OnDisable()
+    {
+        if (breathingCoroutine != null)
+        {
+            StopCoroutine(breathingCoroutine);
+            breathingCoroutine = null;
+        }
+        ResetAnimation();
     }
 
     IEnumerator BreathingCycle()
     {
         while (true)
         {
-            // Inhale Phase
             PlayInhale();
-            yield return new WaitForSeconds(4f); // Wait for 4 seconds (duration of inhale)
+            yield return new WaitForSeconds(4f);
 
-            // Exhale Phase
             PlayExhale();
-            yield return new WaitForSeconds(4f); // Wait for 4 seconds (duration of exhale)
+            yield return new WaitForSeconds(4f);
         }
     }
 
@@ -42,5 +50,12 @@ public class BreathingCompanionController : MonoBehaviour
         audioSource.clip = exhaleClip;
         audioSource.Play();
         animator.SetTrigger("Exhale");
+    }
+
+    private void ResetAnimation()
+    {
+        animator.ResetTrigger("Inhale");
+        animator.ResetTrigger("Exhale");
+        animator.Play("Idle");
     }
 }
